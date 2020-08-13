@@ -1,8 +1,15 @@
-﻿using System;
+﻿using Dependencies.Implements;
+using Dependencies.Interfaces;
+using Azure_Function.ServiceLocator;
 
-namespace Environments
-{
-    public class Production
-    {
+namespace Dependencies.Environments {
+
+    public class Production : ServiceLocator {
+
+        public Production() : base () {
+            RegisterService<IAnimal,Perro>();
+        }
+        
     }
+
 }

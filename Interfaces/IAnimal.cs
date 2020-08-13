@@ -1,6 +1,7 @@
-﻿namespace Implements
-{
-    public interface IAnimal
-    {
+﻿namespace Dependencies.Interfaces {
+
+    public interface IAnimal {
+        string GetSpecie();
     }
+
 }

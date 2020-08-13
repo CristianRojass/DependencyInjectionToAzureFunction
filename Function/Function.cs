@@ -1,16 +1,23 @@
-using System;
+using Dependencies.Interfaces;
+using Azure_Function.ServiceLocator;
 using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
 
-namespace Function
-{
-    public static class Function
-    {
-        [FunctionName("Function1")]
-        public static void Run([TimerTrigger("*/3 * * * * *")]TimerInfo myTimer, ILogger log)
-        {
-            log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
+namespace Azure_Function.Function {
+    
+    public class Function {
+
+        private readonly IServiceLocator _services;
+
+        public Function(IServiceLocator services) {
+            _services = services;
         }
+
+        [FunctionName("Animal")]
+        public void Run([TimerTrigger("*/3 * * * * *")]TimerInfo myTimer, ILogger log) {
+            log.LogInformation($"ServiceLocator -   Animal: {_services.GetService<IAnimal>().GetSpecie()}");
+        }
+
     }
+
 }

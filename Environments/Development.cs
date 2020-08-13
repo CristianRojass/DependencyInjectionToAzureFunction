@@ -1,10 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Dependencies.Implements;
+using Dependencies.Interfaces;
+using Azure_Function.ServiceLocator;
 
-namespace Environments
-{
-    class Development
-    {
+namespace Dependencies.Environments {
+
+    public class Development : ServiceLocator {
+
+        public Development() : base () {
+            RegisterService<IAnimal,Gato>();
+        }
+
     }
+
 }

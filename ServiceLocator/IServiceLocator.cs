@@ -1,5 +1,7 @@
-﻿namespace ServiceLocator {
-    public interface IServiceLocator
-    {
+﻿namespace Azure_Function.ServiceLocator {
+
+    public interface IServiceLocator {
+        T GetService<T>();
     }
+
 }

@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Dependencies.Interfaces;
 
-namespace Implements
-{
-    class Gato
-    {
+namespace Dependencies.Implements {
+
+    public class Gato : Animal, IAnimal { 
+    
     }
+
 }

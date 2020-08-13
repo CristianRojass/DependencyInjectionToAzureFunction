@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Dependencies.Interfaces;
 
-namespace Implements
-{
-    class Perro
-    {
+namespace Dependencies.Implements {
+
+    public class Perro : Animal, IAnimal {
+
     }
+
 }
